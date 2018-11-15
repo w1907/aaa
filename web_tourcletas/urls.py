@@ -25,7 +25,7 @@ urlpatterns = [
 
     path('auth/', include('authenticate.urls'), name="auth"),
     path('', include('checklist.urls'), name="checklist"),
-    path('', include('catalogo.urls'), name="catalogo"),
+    path('catalogo/', include('catalogo.urls'), name="catalogo"),
     
     #Paths del admin
     path('admin/', admin.site.urls),

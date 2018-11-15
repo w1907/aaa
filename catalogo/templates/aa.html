@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="GET">
+		{{ filter.form.as_p }}
+		<button type="submit">Filtro</button>
+	</form>
+	<ul>
+		{% for bici in filter.qs %}
+		<li>{{bici.precio}} - {{bici.modelo}} / {{ bici.categoria}}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

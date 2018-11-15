@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'authenticate',
     'checklist',
     'catalogo',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
