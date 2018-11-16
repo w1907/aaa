@@ -3,5 +3,6 @@ from django.urls import path
 from catalogo import views
 
 urlpatterns=[
-	url('', views.buscar, name="catalogo1"),
+	path('', views.catalogo, name='catalogo'),
+	path('', views.buscar, name='buscar'),
 ]

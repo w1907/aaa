@@ -3,12 +3,12 @@ from catalogo.models import bicicleta, catalogo, equipamiento
 
 @admin.register(bicicleta)
 class bicicletaAdmin(admin.ModelAdmin):
-	list_display = ('codigo', 'marca', 'modelo', 'categoria', 'stock',)
+	list_display = ('catalogo', 'marca', 'modelo', 'categoria',)
 
 @admin.register(catalogo)
 class catalogoAdmin(admin.ModelAdmin):
-	list_display = ('codigo', 'categorias',)
+	list_display = ('tipo',)
 
 @admin.register(equipamiento)
-class catalogoAdmin(admin.ModelAdmin):
-	list_display = ('codigo', 'nombre', 'precio',)
+class equipamientoAdmin(admin.ModelAdmin):
+	list_display = ('nombre', 'precio',)

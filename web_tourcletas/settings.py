@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'checklist',
     'catalogo',
     'django_filters',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

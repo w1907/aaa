@@ -21,11 +21,6 @@
 </head>
 
 <body>
-  {% if user.is_authenticated %}
-  <h2>You name is : {{ user.username }}</h2>
-  {% else %}
-  <h2>You are not logged in</h2>
-  {% endif %}
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -228,10 +223,21 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Dashboard</span>
+            <a class="nav-link" data-toggle="collapse" href="#catalogo-collapse" aria-expanded="false" aria-controls="catalogo-collapse">
+              <i class="menu-icon mdi mdi-content-copy"></i>
+              <span class="menu-title">Catalogo</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="catalogo-collapse">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="#bicicleta">Bicicleta</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#equipamiento">Equipamiento</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -251,7 +257,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'catalogo1' %}">
+            <a class="nav-link" href="#">
               <i class="menu-icon mdi mdi-backup-restore"></i>
               <span class="menu-title">Catalogo</span>
             </a>

@@ -9,4 +9,4 @@ class bicicletaFilter(django_filters.FilterSet):
 class catalogoFilter(django_filters.FilterSet):
 	class Meta:
 		model = catalogo
-		fields = ['categorias',]
+		fields = ['tipo',]

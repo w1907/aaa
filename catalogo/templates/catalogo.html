@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -233,12 +234,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false">
               <i class="menu-icon fa fa-archive"></i>
               <span class="menu-title">Arriendo</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
                   <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a>
@@ -311,17 +312,40 @@
       </h1>
 
       <div class="row">
+        <div class="col-lg-12">
+          <form method="GET">
+            <div class="well">
+              <h4 style="margin-top: 0">Filter</h4>
+              <div class="row">
+                <div class="form-group col-sm-4 col-md-3 col-lg-5">
+                  {{ filter.form.categoria.label_tag }}
+                  {% render_field filter.form.categoria class="form-control" %}
+                </div>
+                <div class="form-group col-sm-4 col-md-3">
+                  {{ filter.form.aro.label_tag }}
+                  {% render_field filter.form.aro class="form-control" %}
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-search"></span> Search
+              </button>
+            </div>
+          </form>
+        </div>
+        {% for bici in filter.qs %}
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project One</a>
+                <a href="#">{{ bici.modelo }}</a>
               </h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
           </div>
         </div>
+        {% endfor %}
+        <!--
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -378,9 +402,10 @@
           </div>
         </div>
       </div>
+    -->
       <!-- /.row -->
-
-      <!-- Pagination -->
+    </div>
+          <!-- Pagination -->
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
@@ -404,8 +429,6 @@
           </a>
         </li>
       </ul>
-
-    </div>
     <!-- /.container -->
       <!-- main-panel ends -->
     </div>

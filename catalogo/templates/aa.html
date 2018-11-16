@@ -9,9 +9,13 @@
 		<button type="submit">Filtro</button>
 	</form>
 	<ul>
+		{% if filter.qs == none %}
+		<h1>ha</h1>
+		{% else %}
 		{% for bici in filter.qs %}
 		<li>{{bici.precio}} - {{bici.modelo}} / {{ bici.categoria}}</li>
 		{% endfor %}
+		{% endif %}
 	</ul>
 </body>
 </html>
